@@ -16,7 +16,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 
-# python virodecode_singularity.py -i virodecode_1.sif -1 fq1 -2 fq2
+# python run_virodecode_singularity.py -i virodecode_1.sif -1 fq1 -2 fq2
 # Required Arguments
 parser.add_argument("-i", "--image", type=str, required=True,
                     help="iamge path")
