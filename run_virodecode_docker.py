@@ -32,18 +32,17 @@ parser.add_argument("-o", "--outDir", type=str, default=".", required=False,
 parser.add_argument("-r", "--ref", type=str, default="", required=False,
                     help="Reference genome")
 parser.add_argument("-g", "--gff", type=str, default="", required=False,
-                    help="gff file")
+                    help="gff file, for Icarus visualization")
 parser.add_argument("-p", "--para", type=str, default="sc", required=False,
                     help="spades.py parameter")
 parser.add_argument("-c", "--coverage", type=str, default="5000", required=False,
                     help="subsample reads if the mean coverage is higher than xxx")
 parser.add_argument("-m", "--mode", type=str, default="3", required=False,
-                    help="1:variants calling 2:assembly 3:variants calling and assembly")
+                    help="1:variants calling 2:assembly 3(default):variants calling and assembly")
 parser.add_argument("-t", "--thread", type=str, default="8", required=False,
                     help="thread")
 parser.add_argument("-G", "--genome_version", type=str, default="", required=False,
-                    help="thread")
-
+                    help="genome version for SNP annotation by snpEff")
 args = parser.parse_args()
 
 
