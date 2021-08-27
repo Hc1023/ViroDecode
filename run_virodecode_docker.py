@@ -4,7 +4,7 @@
 #
 # Author: Sisi Huang
 # Made at: Jiang Lab
-# Github: https://github.com/Hc1023/virodecode
+# Github: https://github.com/Hc1023/ViroDecode
 #
 # =================================================
 
