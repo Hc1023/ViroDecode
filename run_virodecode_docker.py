@@ -21,7 +21,7 @@ parser = argparse.ArgumentParser()
 # python run_virodecode_docker.py -i sisih/viraldecode:1 -1 fq1 -2 fq2
 # Required Arguments
 parser.add_argument("-i", "--image", type=str, required=True,
-                    help="iamge path")
+                    help="image path")
 parser.add_argument("-1", "--read1", type=str, required=True, 
                     help="Provide read1 file path")
 parser.add_argument("-2", "--read2", type=str, required=True,
@@ -41,7 +41,7 @@ parser.add_argument("-c", "--coverage", type=str, default="5000", required=False
                     help="subsample reads if the mean coverage is higher than xxx")
 parser.add_argument("-m", "--mode", type=str, default="1", required=False,
                     help="0: variants calling using bowtie2 1:(default) variants calling using bwa \
-                        \n 2:assembly 3:variants calling using bowtie2 and assembly")
+                          2:assembly 3:variants calling using bowtie2 and assembly")
 parser.add_argument("-t", "--thread", type=str, default="8", required=False,
                     help="thread")
 parser.add_argument("-G", "--genome_version", type=str, default="", required=False,
