@@ -1,11 +1,13 @@
 # =================================================
 # virodecode
 # Version: 1.0 using Docker
-#
+# Docker installed
+# 
 # Author: Sisi Huang
 # Made at: Jiang Lab
 # Github: https://github.com/Hc1023/ViroDecode
-#
+# Docker: https://hub.docker.com/r/sisih/virodecode
+# 
 # =================================================
 
 __author__ = 'sisihuang'
@@ -37,14 +39,14 @@ parser.add_argument("-p", "--para", type=str, default="sc", required=False,
                     help="spades.py parameter")
 parser.add_argument("-c", "--coverage", type=str, default="5000", required=False,
                     help="subsample reads if the mean coverage is higher than xxx")
-parser.add_argument("-m", "--mode", type=str, default="3", required=False,
-                    help="1:variants calling 2:assembly 3(default):variants calling and assembly")
+parser.add_argument("-m", "--mode", type=str, default="1", required=False,
+                    help="0: variants calling using bowtie2 1:(default) variants calling using bwa \
+                        \n 2:assembly 3:variants calling using bowtie2 and assembly")
 parser.add_argument("-t", "--thread", type=str, default="8", required=False,
                     help="thread")
 parser.add_argument("-G", "--genome_version", type=str, default="", required=False,
                     help="genome version for SNP annotation by snpEff")
 args = parser.parse_args()
-
 
 
 # requirement: read1 and read2 in the same directory
@@ -57,6 +59,8 @@ para=args.para
 coverage=args.coverage
 mode=args.mode
 
+if mode == "0":
+    run = "Script0.sh"
 if mode == "1":
     run = "Script1.sh"
 if mode == "2":
@@ -86,5 +90,3 @@ else:
 " + InDir + " " + OutDir + " " + fq1 + " " + fq2 + " " 
 + args.ref + " " + thread + " " + para + " " + coverage + " " + args.gff + " " + args.genome_version)
 
-
-# docker installed
