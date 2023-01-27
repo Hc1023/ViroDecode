@@ -1,4 +1,4 @@
 # ViroDecode
 
-Helper Scripts running [ViroDecode](https://hub.docker.com/repository/docker/sisih/virodecode).
+Helper Scripts running [ViroDecode](https://hub.docker.com/r/sisih/virodecode).
 
